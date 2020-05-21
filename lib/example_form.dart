@@ -1,7 +1,7 @@
-// Define a custom Form widget.
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutterapp/image_screen.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 
@@ -208,7 +208,10 @@ class MyFormState extends State<MyForm> {
               alignment: Alignment.topCenter,
               margin: const EdgeInsets.all(20.0),
               child: RaisedButton(
-                onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => ImageScreen()));
+
+                  },
                 textColor: Colors.black,
                 child: const Text(
                   'Join now',
