@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutterapp/image_screen.dart';
+import 'package:flutterapp/tic_tac_toe_screen.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 
@@ -209,7 +210,7 @@ class MyFormState extends State<MyForm> {
               margin: const EdgeInsets.all(20.0),
               child: RaisedButton(
                   onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => ImageScreen()));
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => TicTacToeScreen()));
 
                   },
                 textColor: Colors.black,

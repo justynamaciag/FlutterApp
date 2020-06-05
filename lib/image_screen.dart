@@ -18,17 +18,16 @@ class ImageScreenState extends State<ImageScreen> {
     @override
     Widget build(BuildContext context){
       return Container(
-        margin: EdgeInsets.symmetric(vertical: 30.0),
+        margin: EdgeInsets.only(top: 30.0),
         color: const Color(0xffe5a9cb),
         child:Column(
           children: <Widget>[
             Container(
               margin: EdgeInsets.symmetric(vertical: 30.0),
               alignment: Alignment.bottomCenter,
-                child: new Image.network(_url, height: 300, width: 270, fit:BoxFit.fill),
+                child: new Image.network(_url, height: 400, width: 400),
                 ),
             new RaisedButton(
-
               child: Text('Show me an another cat!'),
               onPressed: (){
                 setState(() {
