@@ -43,11 +43,13 @@ class TicTacToeScreenState extends State<TicTacToeScreen> {
   List<Sign> board;
   Sign sign;
   String message;
+  bool newGame;
 
   @override
   void initState(){
     super.initState();
     setState(() {
+      this.newGame = true;
       this.board = List.filled(9, null);
       this.sign = Sign.cross;
       this.message = 'User with symbol: ' + this.sign.symbol + ' turn!';
@@ -55,6 +57,7 @@ class TicTacToeScreenState extends State<TicTacToeScreen> {
   }
   void resetGame(){
     setState(() {
+      this.newGame = true;
       this.board = List.filled(9, null);
       this.sign = Sign.cross;
       this.message = 'User with symbol: ' + this.sign.symbol + ' turn!';
@@ -62,13 +65,15 @@ class TicTacToeScreenState extends State<TicTacToeScreen> {
   }
 
   step(int index){
-    if(this.board[index] == null){
+    if(this.board[index] == null && this.newGame){
       setState(() {
         board[index] = this.sign;
       });
     }
-    if(checkIfWin())
+    if(checkIfWin()) {
+      this.newGame = false;
       this.message = "Game over!\nUser with symbol: " + this.sign.symbol + " won!!!";
+    }
     else {
       if (this.sign == Sign.circle)
         this.sign = Sign.cross;
